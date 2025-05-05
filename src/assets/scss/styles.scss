@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+@forward "colors";
+@use "colors";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+    background-color: colors.$background-color;
+    background-image: url('/assets/bg-dark.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+.text-color-grey {
+    color: colors.$text-color;
+}
+
+.text-color-pink {
+  color: colors.$pink-color;
+}
+
+.text-color-blue {
+  color: colors.$primary-color;
+}
+
+.box-border {
+    border: 2px solid colors.$primary-color;
+    border-radius: 10px;
+}
+
+.letter-space{
+  letter-spacing: 2px;
+}
+
+.default-font {
+  font-family: "Red Hat Mono";
+}
+
+.mono-font {
+  font-family: "Red Hat Mono";
+}

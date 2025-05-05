@@ -1,0 +1,154 @@
+@use 'colors' as colors;
+
+.light-border {
+    position: relative;
+    padding: 2px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+.light-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(90deg, transparent, colors.$primary-color, transparent);
+    border-radius: 10px;
+    z-index: 1;
+    animation: border-light 5s linear infinite;
+    background-size: 300% 300%;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    border-radius: 8px;
+    background-color: colors.$secondary-color;
+    width: 100%;
+    padding: 3rem;
+    align-items: center;
+}
+
+.bottom-container {
+    display: block;
+    width: 50%;
+}
+
+.about-container {
+    margin: 3rem;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    flex: 1 1 0; /* grow: 1, shrink: 1, basis: 0 = shrink/grow proportionally */
+    flex-direction: column;
+    min-width: 0; /* prevent overflow */
+}
+
+.left {
+    flex-direction: column;
+}
+
+.left a {
+    margin-top: 2rem;
+}
+
+.right {
+    display: flex;
+    align-items: flex-end;
+}
+
+.right img {
+    width: 25rem;
+    height: auto;
+    max-width: 100%;
+}
+
+.intoduction {
+    margin-top: 2rem;
+    font-size: 2rem;
+}
+
+.introduction-summary {
+    margin-top: 2rem;
+}
+
+.introduction-summary span{
+    margin-top: 2rem;
+    color: colors.$pink-color;
+}
+
+.gradient-text {
+    display: inline-block;
+    color: #00A0CB;
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.7), rgba(0,0,0,1));
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.7), rgba(0,0,0,1));
+    -webkit-mask-size: 100%;
+    mask-size: 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+  }
+
+@keyframes border-light {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.icon-carousel {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  
+.carousel-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 10s linear infinite;
+    white-space: nowrap;
+}
+
+.carousel-track i {
+    font-size: 2rem;
+    color: #00a0cb;
+}
+
+/* Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+  
+
+@media(max-width: 1020px) {
+    .top-container {
+        flex-direction: column;
+    }
+
+    .right {
+        align-items: center;
+    }
+}
+
+@media (max-width: 589px) {
+    .about-container {
+        margin: 1rem;
+    }
+}

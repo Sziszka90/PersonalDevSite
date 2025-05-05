@@ -1,0 +1,169 @@
+@use '../../assets/scss/colors' as colors;
+
+.main-logo {
+    display: flex;
+}
+
+.main-logo img {
+    width: 3rem;
+    height: 3rem;
+}
+
+.navbar {
+    margin-left: auto;
+    padding: 1rem 2rem;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 1rem;
+    padding: 0;
+    margin-left: auto;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  
+  .navbar-menu li a {
+    text-decoration: none;
+    color: colors.$text-color;
+  }
+  
+  .navbar-menu li a:hover {
+    color: colors.$primary-color;
+    transition: background-color 0.5s ease, color 0.5s ease; /* adjust duration */
+  }
+
+button {
+    border: none;
+    background-color: colors.$secondary-color;
+}
+
+.offcanvas {
+    background-color: colors.$secondary-color;
+    overflow: auto;
+}
+
+.offCanvas__side-info, .offCanvas__logo {
+    color:white;
+}
+
+.offCanvas__logo {
+    border-bottom: 2px solid colors.$primary-color;
+}
+
+.offcanvas-menu a, .offcanvas-menu li, .offcanvas-menu ul{
+    list-style: none;
+    color: colors.$text-color;
+    font-size: 2rem;
+    text-decoration: none;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.menu-close i {
+    font-size: 2rem;
+}
+
+.offcanvas-menu {
+    border-top: 1px solid colors.$primary-color;
+    border-bottom: 1px solid colors.$primary-color;
+    margin-top: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.offcanvas-menu a:hover, li:hover{
+    color: colors.$primary-color;
+    transition: background-color 0.5s ease, color 0.5s ease; /* adjust duration */
+}
+
+.nav-container {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 3rem;
+    align-items: center;
+    padding: 0;
+    background-color: colors.$secondary-color;
+  }
+
+.logo-text {
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+.offcanvas-toggle {
+    padding: 2rem;
+    background-color: colors.$background-color;
+}
+
+.navbar-toggle {
+    display: none;
+}
+
+.title {
+    margin-left: 1rem;
+}
+
+.title a {
+    display: flex;
+    align-items: center;
+}
+
+.small-logo-text {
+    display: none;
+}
+
+.large-logo-text {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.animated-text span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+  
+.animated-text span:hover {
+transform: translateY(-5px) scale(1.1);
+color: #00a0cb;
+}
+
+
+@media (max-width: 589px) {
+    .nav-container {
+        margin: 1rem;
+    }
+
+    .offcanvas-toggle {
+        display: none;
+    }
+    
+    .navbar-menu {
+        display: none;
+    }
+}
+
+@media(max-width: 1020px) {
+    .navbar-menu {
+        display: none,
+    }
+
+    .navbar-toggle {
+        color: white;
+        display: block;
+    }
+
+    .small-logo-text {
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+    }
+
+    .large-logo-text {
+        display: none;
+    }
+}
