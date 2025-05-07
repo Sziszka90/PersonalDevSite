@@ -1,28 +1,5 @@
 @use 'colors' as colors;
 
-.light-border {
-    position: relative;
-    padding: 2px;
-    border: 2px solid transparent;
-    background-clip: padding-box;
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-.light-border::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(90deg, transparent, colors.$primary-color, transparent);
-    border-radius: 10px;
-    z-index: 1;
-    animation: border-light 5s linear infinite;
-    background-size: 300% 300%;
-}
-
 .main-container {
     display: flex;
     flex-direction: column;
@@ -85,7 +62,7 @@
 
 .introduction-summary span{
     margin-top: 2rem;
-    color: colors.$pink-color;
+    color: colors.$green-color;
 }
 
 .gradient-text {
@@ -98,15 +75,6 @@
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
   }
-
-@keyframes border-light {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
-}
 
 .icon-carousel {
     overflow: hidden;

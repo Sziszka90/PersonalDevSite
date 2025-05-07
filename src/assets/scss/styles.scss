@@ -1,6 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
 @forward "colors";
 @use "colors";
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      theme-type: light,
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}/* You can add global styles to this file, and also import other style files */
 
 html, body {
   margin: 0;
@@ -19,8 +48,8 @@ body {
     color: colors.$text-color;
 }
 
-.text-color-pink {
-  color: colors.$pink-color;
+.text-color-green {
+  color: colors.$green-color;
 }
 
 .text-color-blue {
@@ -42,4 +71,38 @@ body {
 
 .mono-font {
   font-family: "Red Hat Mono";
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.light-border {
+  position: relative;
+  padding: 2px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+@keyframes border-light {
+  0% {
+      background-position: 0% 50%;
+  }
+  100% {
+      background-position: 100% 50%;
+  }
+}
+
+.light-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(90deg, transparent, colors.$primary-color, transparent);
+  border-radius: 10px;
+  z-index: 1;
+  animation: border-light 5s linear infinite;
+  background-size: 300% 300%;
 }

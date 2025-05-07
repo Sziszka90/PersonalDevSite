@@ -1,0 +1,48 @@
+@use 'colors' as colors;
+
+.areas-container {
+    margin: 3rem;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    border-radius: 8px;
+    background-color: colors.$secondary-color;
+    width: 100%;
+    padding: 3rem;
+    align-items: center;
+}
+
+.areas-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 3rem;
+    width: 100%;
+}
+
+.areas-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+mat-card-header {
+    justify-content: center;
+    text-align: center;
+}
+
+mat-card-title {
+    margin: 1rem;
+}
+
+mat-card {
+    border: 1px solid colors.$primary-color;
+    background-color: colors.$secondary-color;
+    width: 350px;
+    height: 300px;
+}

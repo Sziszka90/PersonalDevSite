@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { AboutComponent } from './about/about.component';
-import { OdometerComponent } from './odometer/odometer.component';
+import { Component } from '@angular/core';
+import { AreasComponent } from './areas/areas.component';
 
 @Component({
     selector: 'app-root',
-    imports: [NavBarComponent, AboutComponent, OdometerComponent],
+    imports: [NavBarComponent, AboutComponent, AreasComponent],
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'
