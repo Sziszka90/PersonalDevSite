@@ -4953,6 +4953,9 @@ export {
   PathLocationStrategy,
   Location,
   HashLocationStrategy,
+  NgClass,
+  NgStyle,
+  NgTemplateOutlet,
   CommonModule,
   parseCookieValue,
   PLATFORM_BROWSER_ID,
@@ -4975,4 +4978,4 @@ export {
    * License: MIT
    *)
 */
-//# sourceMappingURL=chunk-JWVMOMJ2.js.map
+//# sourceMappingURL=chunk-XA4K6SF6.js.map

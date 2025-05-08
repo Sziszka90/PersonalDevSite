@@ -12,7 +12,6 @@
     border-radius: 8px;
     background-color: colors.$secondary-color;
     width: 100%;
-    padding: 3rem;
     align-items: center;
 }
 
@@ -20,7 +19,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    margin: 3rem;
     width: 100%;
 }
 
@@ -29,6 +27,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin: 3rem;
 }
 
 mat-card-header {
@@ -40,9 +39,34 @@ mat-card-title {
     margin: 1rem;
 }
 
-mat-card {
+.card {
     border: 1px solid colors.$primary-color;
     background-color: colors.$secondary-color;
     width: 350px;
     height: 300px;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.card.float-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card:hover {
+    mat-card-title {
+        color: colors.$green-color;
+    }
+    transform: translateY(-10px); /* Raises the card slightly */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+@media(max-width: 1000px) {
+    .areas-row {
+        flex-direction: column;
+    }
+
+    mat-card {
+        width: 500px;
+    }
 }

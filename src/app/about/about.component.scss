@@ -19,6 +19,14 @@
 
 .about-container {
     margin: 3rem;
+    transform: translateY(120px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
+.about-container.float-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .top-container {
@@ -34,6 +42,18 @@
 
 .left {
     flex-direction: column;
+    transform: translateY(120px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.column.left.float-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.column.right.float-in {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .left a {
@@ -43,6 +63,8 @@
 .right {
     display: flex;
     align-items: flex-end;
+    transform: translateY(120px);
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .right img {
@@ -92,6 +114,15 @@
 .carousel-track i {
     font-size: 2rem;
     color: #00a0cb;
+}
+
+.resume {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resume:hover {
+    transform: scale(1.1); 
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Animation */

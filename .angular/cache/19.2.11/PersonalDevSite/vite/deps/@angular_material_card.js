@@ -1,10 +1,10 @@
 import {
   BidiModule
-} from "./chunk-V423OGZ7.js";
+} from "./chunk-4SDRLPKU.js";
 import {
   DOCUMENT,
   isPlatformBrowser
-} from "./chunk-JWVMOMJ2.js";
+} from "./chunk-XA4K6SF6.js";
 import {
   APP_ID,
   ApplicationRef,
