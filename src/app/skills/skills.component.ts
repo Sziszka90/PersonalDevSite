@@ -1,35 +1,42 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-skills',
-  imports: [CarouselModule],
+  imports: [CarouselModule, CommonModule, MatCardModule],
   templateUrl: './skills.component.html',
   styleUrl: './skills.component.scss'
 })
 export class SkillsComponent {
-  customOptions: OwlOptions = {
+  public customOptions: OwlOptions = {
     loop: true,
-    mouseDrag: false,
+    autoplaySpeed: 200,
+    autoplay: true,                            
+    animateIn: true,
+    mouseDrag: true,
     touchDrag: false,
     pullDrag: false,
     dots: false,
-    navSpeed: 700,
+    navSpeed: 200,
     navText: ['', ''],
     responsive: {
       0: {
         items: 1
       },
-      400: {
+      350: {
         items: 2
       },
-      740: {
+      550: {
         items: 3
       },
-      940: {
+      800: {
         items: 4
+      },
+      1000: {
+        items: 5
       }
-    },
-    nav: true
+    }
   }
 }

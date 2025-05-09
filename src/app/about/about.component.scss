@@ -23,7 +23,6 @@
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-
 .about-container.float-in {
     opacity: 1;
     transform: translateY(0);
@@ -54,6 +53,10 @@
 .column.right.float-in {
     opacity: 1;
     transform: translateY(0);
+}
+
+.column.right img {
+    animation: pulse 5s ease infinite;
 }
 
 .left a {
@@ -107,7 +110,7 @@
 .carousel-track {
     display: flex;
     gap: 2rem;
-    animation: scroll 10s linear infinite;
+    animation: scroll 8s linear infinite;
     white-space: nowrap;
 }
 
@@ -133,6 +136,13 @@
     100% {
         transform: translateX(-50%);
     }
+}
+
+@keyframes pulse {
+    0% { transform: scale(100%); }
+    33% { transform: scale(110%); } 
+    66% { transform: scale(110%); }
+    100% { transform: scale(100%); } 
 }
   
 

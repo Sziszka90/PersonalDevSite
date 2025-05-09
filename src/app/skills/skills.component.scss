@@ -1,22 +1,27 @@
 @use 'colors' as colors;
 
+.skills-container {
+    margin: 3rem;
+}
+
 .main-container {
-    display: flex;
-    flex-direction: column;
     position: relative;
     z-index: 2;
     border-radius: 8px;
     background-color: colors.$secondary-color;
     width: 100%;
     padding: 3rem;
-    align-items: center;
 }
 
-.skills-container {
-    margin: 3rem;
+.slide {
+    width: 10rem;
+    background-color: colors.$secondary-color;
 }
 
-owl-carousel-o {
-    display: flex;
-    flex-direction: row;
+@media (max-width: 589px) {
+    .skills-container {
+        margin: 1rem;
+    }
 }
+
+
