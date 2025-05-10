@@ -3,10 +3,11 @@ import { AboutComponent } from './about/about.component';
 import { Component } from '@angular/core';
 import { AreasComponent } from './areas/areas.component';
 import { SkillsComponent } from './skills/skills.component';
+import { ContactComponent } from './contact/contact.component';
 
 @Component({
     selector: 'app-root',
-    imports: [NavBarComponent, AboutComponent, AreasComponent, SkillsComponent],
+    imports: [NavBarComponent, AboutComponent, AreasComponent, SkillsComponent, ContactComponent],
     standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'

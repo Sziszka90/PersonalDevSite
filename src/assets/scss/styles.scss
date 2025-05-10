@@ -66,13 +66,10 @@ body {
 }
 
 .default-font {
-  font-family: "Red Hat Mono";
+  font-family: "Cal Sans";
   font-size: large;
 }
 
-.mono-font {
-  font-family: "Red Hat Mono";
-}
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -111,7 +108,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @media(max-width: 400px) {
   .default-font {
-    font-family: "Red Hat Mono";
+    font-family: "Cal Sans";
     font-size: medium;
   }
   

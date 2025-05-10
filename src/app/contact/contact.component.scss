@@ -1,0 +1,118 @@
+@use '../../assets/scss/colors' as colors;
+
+h3 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.contact-container {
+    margin: 3rem;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    z-index: 2;
+    border-radius: 8px;
+    background-color: colors.$secondary-color;
+    width: 100%;
+    align-items: center;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem;
+    width: 50%;
+    height: 100%;
+}
+
+.contact-info-container {
+    margin: 3rem;
+    width: 50%
+}
+
+input {
+    padding: 10px 30px;     
+    font-size: 20px;       
+    border: 3px solid colors.$primary-color; 
+    border-radius: 20px;   
+    outline: none;       
+    width: 100%;          
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
+    margin: 1rem;
+}
+
+.submit-button {
+    padding: 10px 30px;     
+    background-color: colors.$primary-color;
+    font-size: 20px;       
+    border: 3px solid colors.$primary-color; 
+    border-radius: 20px;   
+    outline: none;       
+    max-width: 100%;          
+    transition: border-color 0.3s;
+    margin: 1rem;
+    align-items: center;
+}
+
+.submit-button:active {
+    background-color: colors.$secondary-color;
+}
+
+textarea {
+    padding: 1rem;  
+    font-size: 20px;       
+    border: 3px solid colors.$primary-color; 
+    border-radius: 20px;   
+    outline: none;       
+    width: 100%;          
+    box-sizing: border-box; 
+    transition: border-color 0.3s;
+    margin: 1rem;
+}
+
+.message-form {
+    height: 100%;
+}
+  
+input:focus {
+    border-color: colors.$green-color; 
+}
+
+.custom-snackbar {
+    background-color: colors.$primary-color; 
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+@media (max-width: 1200px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .contact-info-container {
+        margin: 3rem;
+        text-align: center;
+        width: 50%
+    }
+
+    .message-container {
+        width: 100%;
+    }
+}

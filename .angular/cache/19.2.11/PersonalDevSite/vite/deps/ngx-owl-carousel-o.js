@@ -1,9 +1,4 @@
 import {
-  ActivatedRoute,
-  NavigationEnd,
-  Router
-} from "./chunk-LU5AZ7RV.js";
-import {
   animate,
   sequence,
   state,
@@ -11,6 +6,11 @@ import {
   transition,
   trigger
 } from "./chunk-CILGPIRX.js";
+import {
+  ActivatedRoute,
+  NavigationEnd,
+  Router
+} from "./chunk-LU5AZ7RV.js";
 import "./chunk-FJ76ZOWM.js";
 import "./chunk-GBENN3JH.js";
 import {

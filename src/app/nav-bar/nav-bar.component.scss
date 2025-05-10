@@ -116,6 +116,10 @@ button {
     display: none;
 }
 
+span {
+    font-size: 2rem;
+}
+
 .large-logo-text {
     margin-left: 1rem;
     font-size: 1.5rem;
@@ -147,7 +151,7 @@ color: #00a0cb;
     }
 }
 
-@media(max-width: 1020px) {
+@media(max-width: 1100px) {
     .navbar-menu {
         display: none,
     }
