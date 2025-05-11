@@ -4,22 +4,26 @@
             <div class="main-container text-color-green">
                 <div class="top-container">
                     <div appFloatInOnScroll class="column left">
-                        <span class="default-font">&lt;span&gt;</span>
-                        <span class="text-color-grey default-font" 
-                                typingAnimation 
-                                [typeSpeed]="200" 
-                                [startDelay]="2000" 
-                                [condition]="start"
-                                [text]='"Hi, This is Szilard"'>                         
-                        </span>
-                        <span class="default-font">&lt;/span&gt;</span>
+                        <div class="typewriter-container">
+                            <span class="default-font">&lt;span&gt;</span>
+                            <span class="text-color-grey default-font" 
+                                    typingAnimation 
+                                    [typeSpeed]="200" 
+                                    [startDelay]="2000" 
+                                    [condition]="start"
+                                    [text]='"Hi, This is Szilard"'>                         
+                            </span>
+                            <span class="default-font">&lt;/span&gt;</span>
+                        </div>           
                         <div class="intoduction text-color-grey default-font" >Senior <span class="gradient-text">&#123;  Full Stack &#125;</span>  Software Engineer</div>
                         <div class="introduction-summary default-font text-color-grey"><span>&lt;p&gt;</span>I leverage modern technologies like <span>.NET</span>, <span>Angular</span> and <span>DevOps</span> practices to build web solutions that are reliable, scalable, and forward-thinking.<span>&lt;/p&gt;</span></div>
                         
-                        <a href="../../assets/Ferencz_Szilard_CV.pdf" download="Szilard_Ferencz" class="btn text-color-green default-font resume">
-                            <i class="fa-solid fa-download"></i>
-                            [ Download My CV ]
-                        </a>
+                        <button class="bounce-button custom-button default-font resume">
+                            <a href="../../assets/Ferencz_Szilard_CV.pdf" download="Szilard_Ferencz">
+                                <i class="fa-solid fa-download"></i>
+                                [ Download My CV ]
+                            </a>
+                        </button>
                     </div>
                     <div appFloatInOnScroll class="column right">
                         <img src="../../assets/about.png" alt="about" />

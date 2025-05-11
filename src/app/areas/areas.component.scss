@@ -1,9 +1,10 @@
 @use 'colors' as colors;
+@use 'fonts' as fonts;
 
 
 // Containers
 .areas-container {
-    margin: 3rem;
+    margin: 1rem;
 }
 
 .grid-container {

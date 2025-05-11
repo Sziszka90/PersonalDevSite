@@ -74,6 +74,10 @@ body {
   line-height: 1.5;
 }
 
+.letter-space {
+  letter-spacing: 0.1rem;
+}
+
 .light-border {
   position: relative;
   padding: 2px;
@@ -127,9 +131,6 @@ color: colors.$primary-color;
 
 .bounce-button {
   display: inline-block;
-  padding: 15px 30px;
-  font-size: 16px;
-  background-color: #4CAF50;
   color: white;
   border: none;
   border-radius: 5px;
@@ -139,6 +140,23 @@ color: colors.$primary-color;
 
 .bounce-button:hover {
   animation: bounce 0.6s ease infinite;
+}
+
+.custom-button {
+  padding: 10px 30px;    
+  background-color: colors.$primary-color;
+  font-size: 1rem;       
+  border: 3px solid colors.$primary-color; 
+  border-radius: 20px;   
+  outline: none;       
+  max-width: 100%;          
+  transition: border-color 0.3s;
+  margin: 1rem;
+  align-items: center;
+}
+
+.custom-button:active {
+  background-color: colors.$secondary-color;
 }
 
 @keyframes bounce {

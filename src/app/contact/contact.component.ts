@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import emailjs from 'emailjs-com';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { GetInTouchComponent } from '../get-in-touch/get-in-touch.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, MatSnackBarModule],
+  imports: [ReactiveFormsModule, MatSnackBarModule, GetInTouchComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

@@ -1,0 +1,5 @@
+@use '../../assets/scss/colors' as colors;
+
+.offCanvas__logo {
+    border-bottom: 2px solid colors.$primary-color;
+}

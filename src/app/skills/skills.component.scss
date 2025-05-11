@@ -5,21 +5,11 @@
     margin: 3rem;
 }
 
-.main-container {
-    position: relative;
-    z-index: 2;
-    border-radius: 8px;
-    background-color: colors.$secondary-color;
-    width: 100%;
-    padding: 3rem;
-}
-
 // Slides
 .slide {
     width: 10rem;
     background-color: colors.$secondary-color;
 }
-
 
 // Responsiveness
 @media (max-width: 589px) {
