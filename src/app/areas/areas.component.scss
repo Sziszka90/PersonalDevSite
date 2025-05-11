@@ -1,28 +1,9 @@
 @use 'colors' as colors;
 
+
+// Containers
 .areas-container {
     margin: 3rem;
-}
-
-.main-container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 2;
-    border-radius: 8px;
-    background-color: colors.$secondary-color;
-    width: 100%;
-    align-items: center;
-}
-
-mat-card-header {
-    justify-content: center;
-    text-align: center;
-}
-
-mat-card-title {
-    font-family: Cal Sans;
-    margin: 1rem;
 }
 
 .grid-container {
@@ -34,6 +15,16 @@ mat-card-title {
     margin: 2rem;                        
 }
 
+// Cards
+mat-card-header {
+    justify-content: center;
+    text-align: center;
+}
+
+mat-card-title {
+    font-family: fonts.$default-font;
+    margin: 1rem;
+}
 
 .card {
     border: 1px solid colors.$background-color;
@@ -60,6 +51,8 @@ mat-card-title {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); 
 }
 
+
+// Responsiveness
 @media(max-width: 800px) {
     .grid-container {
         display: grid;

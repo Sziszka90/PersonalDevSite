@@ -1,24 +1,8 @@
 @use 'colors' as colors;
 
-.main-container {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 2;
-    border-radius: 8px;
-    background-color: colors.$secondary-color;
-    width: 100%;
-    padding: 3rem;
-    align-items: center;
-}
-
-.bottom-container {
-    display: block;
-    width: 50%;
-}
-
+// Containers
 .about-container {
-    margin: 3rem;
+    margin: 1rem;
     transform: translateY(120px);
     transition: opacity 0.8s ease, transform 0.8s ease;
 }
@@ -33,14 +17,26 @@
     flex-direction: row;
 }
 
+.bottom-container {
+    display: block;
+    width: 50%;
+}
+
 .column {
-    flex: 1 1 0; /* grow: 1, shrink: 1, basis: 0 = shrink/grow proportionally */
+    flex: 1 1 0; 
     flex-direction: column;
-    min-width: 0; /* prevent overflow */
+    min-width: 0; 
 }
 
 .left {
     flex-direction: column;
+    transform: translateY(120px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.right {
+    display: flex;
+    align-items: flex-end;
     transform: translateY(120px);
     transition: opacity 1s ease, transform 1s ease;
 }
@@ -59,23 +55,17 @@
     animation: pulse 5s ease infinite;
 }
 
-.left a {
-    margin-top: 2rem;
-}
-
-.right {
-    display: flex;
-    align-items: flex-end;
-    transform: translateY(120px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
 .right img {
     width: 25rem;
     height: auto;
     max-width: 100%;
 }
 
+.left a {
+    margin-top: 2rem;
+}
+
+// Introduction
 .intoduction {
     margin-top: 2rem;
     font-size: 2rem;
@@ -91,16 +81,13 @@
 }
 
 .gradient-text {
-    display: inline-block;
-    color: #00A0CB;
-    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.7), rgba(0,0,0,1));
-    mask-image: linear-gradient(to left, rgba(0,0,0,0.7), rgba(0,0,0,1));
-    -webkit-mask-size: 100%;
-    mask-size: 100%;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
+    font-weight: bold;
+    background-image: linear-gradient(to right, colors.$primary-color, colors.$green-color); 
+    -webkit-background-clip: text; 
+    color: transparent; 
   }
 
+// Carousel
 .icon-carousel {
     overflow: hidden;
     width: 100%;
@@ -119,6 +106,8 @@
     color: #00a0cb;
 }
 
+
+// Resume
 .resume {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -128,7 +117,8 @@
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Animation */
+
+// Animations
 @keyframes scroll {
     0% {
         transform: translateX(0);
@@ -144,8 +134,9 @@
     66% { transform: scale(110%); }
     100% { transform: scale(100%); } 
 }
-  
 
+
+// Responsiveness
 @media(max-width: 1020px) {
     .top-container {
         flex-direction: column;

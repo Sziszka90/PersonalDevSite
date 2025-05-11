@@ -1,5 +1,6 @@
 @use '../../assets/scss/colors' as colors;
 
+// Logo
 .main-logo {
     display: flex;
 }
@@ -9,6 +10,22 @@
     height: 3rem;
 }
 
+.logo-text {
+    font-size: 1rem;
+    padding: 1rem;
+}
+
+// Containers
+.nav-container {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 3rem;
+    align-items: center;
+    padding: 0;
+    background-color: colors.$secondary-color;
+}
+
+// NavBar
 .navbar {
     margin-left: auto;
     padding: 1rem 2rem;
@@ -23,23 +40,61 @@
     margin-left: auto;
     font-size: 1.3rem;
     font-weight: bold;
-  }
+}
   
-  .navbar-menu li a {
+.navbar-menu li a {
     text-decoration: none;
     color: colors.$text-color;
-  }
+}
   
-  .navbar-menu li a:hover {
+.navbar-menu li a:hover {
     color: colors.$primary-color;
     transition: background-color 0.5s ease, color 0.5s ease; /* adjust duration */
-  }
+}
 
 button {
     border: none;
     background-color: colors.$secondary-color;
 }
 
+.navbar-toggle {
+    display: none;
+}
+
+.title {
+    margin-left: 1rem;
+}
+
+.title a {
+    display: flex;
+    align-items: center;
+}
+
+.small-logo-text {
+    display: none;
+}
+
+span {
+    font-size: 2rem;
+}
+
+.large-logo-text {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+
+.animated-text span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+  
+.animated-text span:hover {
+transform: translateY(-5px) scale(1.1);
+color: #00a0cb;
+}
+
+// OffCanvas
 .offcanvas {
     background-color: colors.$secondary-color;
     overflow: auto;
@@ -80,63 +135,13 @@ button {
     transition: background-color 0.5s ease, color 0.5s ease; /* adjust duration */
 }
 
-.nav-container {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 3rem;
-    align-items: center;
-    padding: 0;
-    background-color: colors.$secondary-color;
-  }
-
-.logo-text {
-    font-size: 1rem;
-    padding: 1rem;
-}
-
 .offcanvas-toggle {
     padding: 2rem;
     background-color: colors.$background-color;
 }
 
-.navbar-toggle {
-    display: none;
-}
 
-.title {
-    margin-left: 1rem;
-}
-
-.title a {
-    display: flex;
-    align-items: center;
-}
-
-.small-logo-text {
-    display: none;
-}
-
-span {
-    font-size: 2rem;
-}
-
-.large-logo-text {
-    margin-left: 1rem;
-    font-size: 1.5rem;
-}
-
-.animated-text span {
-    display: inline-block;
-    transition: transform 0.3s ease;
-    cursor: default;
-  }
-  
-.animated-text span:hover {
-transform: translateY(-5px) scale(1.1);
-color: #00a0cb;
-}
-
-
+// Responsiveness
 @media (max-width: 589px) {
     .nav-container {
         margin: 1rem;
@@ -165,6 +170,10 @@ color: #00a0cb;
         display: flex;
         flex-direction: column;
         margin-left: 1rem;
+    }
+
+    .small-logo-text span{
+        font-size: 1.5rem;
     }
 
     .large-logo-text {

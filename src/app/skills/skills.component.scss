@@ -1,5 +1,6 @@
 @use 'colors' as colors;
 
+// Containers
 .skills-container {
     margin: 3rem;
 }
@@ -13,11 +14,14 @@
     padding: 3rem;
 }
 
+// Slides
 .slide {
     width: 10rem;
     background-color: colors.$secondary-color;
 }
 
+
+// Responsiveness
 @media (max-width: 589px) {
     .skills-container {
         margin: 1rem;

@@ -2,7 +2,9 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @forward "colors";
+@forward "fonts";
 @use "colors";
+@use "fonts";
 @use '@angular/material' as mat;
 
 html {
@@ -34,26 +36,31 @@ html {
 html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   width: 100%;
 }
 
 body {
     background-color: colors.$background-color;
     background-image: url('/assets/bg-dark.png');
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-  }
-
-.text-color-grey {
-    color: colors.$text-color;
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
 }
 
-.text-color-green {
-  color: colors.$green-color;
-}
-
-.text-color-blue {
-  color: colors.$primary-color;
+.main-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  border-radius: 8px;
+  background-color: colors.$secondary-color;
+  width: 100%;
+  padding: 3rem;
+  align-items: center;
+  color: colors.$green-color
 }
 
 .box-border {
@@ -61,17 +68,11 @@ body {
     border-radius: 10px;
 }
 
-.letter-space{
-  letter-spacing: 2px;
-}
-
 .default-font {
   font-family: "Cal Sans";
   font-size: large;
+  line-height: 1.5;
 }
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .light-border {
   position: relative;
@@ -80,6 +81,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-clip: padding-box;
   border-radius: 10px;
   overflow: hidden;
+}
+
+.text-color-grey {
+  color: colors.$text-color;
+}
+
+.text-color-green {
+color: colors.$green-color;
+}
+
+.text-color-blue {
+color: colors.$primary-color;
 }
 
 @keyframes border-light {
@@ -105,11 +118,43 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   background-size: 300% 300%;
 }
 
-
 @media(max-width: 400px) {
   .default-font {
-    font-family: "Cal Sans";
+    font-family: fonts.$default-font;
     font-size: medium;
   }
-  
+}
+
+.bounce-button {
+  display: inline-block;
+  padding: 15px 30px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.bounce-button:hover {
+  animation: bounce 0.6s ease infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

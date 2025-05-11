@@ -1,35 +1,9 @@
 @use '../../assets/scss/colors' as colors;
 
-h3 {
-    font-size: 3rem;
-    text-align: center;
-}
 
+// Containers
 .contact-container {
-    margin: 3rem;
-}
-
-.main-container {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    z-index: 2;
-    border-radius: 8px;
-    background-color: colors.$secondary-color;
-    width: 100%;
-    align-items: center;
-}
-
-.form-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.form-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
+    margin: 1rem;
 }
 
 .message-container {
@@ -43,6 +17,24 @@ h3 {
 .contact-info-container {
     margin: 3rem;
     width: 50%
+}
+
+// Forms
+h3 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.form-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
 }
 
 input {
@@ -94,13 +86,7 @@ input:focus {
     border-color: colors.$green-color; 
 }
 
-.custom-snackbar {
-    background-color: colors.$primary-color; 
-    color: white;
-    font-weight: bold;
-    border-radius: 8px;
-}
-
+// Responsiveness
 @media (max-width: 1200px) {
     .main-container {
         flex-direction: column;

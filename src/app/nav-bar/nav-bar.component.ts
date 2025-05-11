@@ -1,10 +1,11 @@
 import { AfterViewInit, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { Offcanvas } from 'bootstrap';
 
 
 @Component({
     selector: 'app-nav-bar',
-    imports: [],
+    imports: [RouterLink],
     standalone: true,
     templateUrl: './nav-bar.component.html',
     styleUrl: './nav-bar.component.scss'
