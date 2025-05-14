@@ -1,15 +1,4 @@
-@use 'base/variables' as variables;
-
-// Containers
-
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto);   
-    gap: 1rem;                       
-    width: 95%;                         
-    margin: 2rem;                        
-}
+@use '../../assets/scss/base/variables' as variables;
 
 // Cards
 mat-card-header {

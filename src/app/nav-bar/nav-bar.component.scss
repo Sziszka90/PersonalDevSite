@@ -3,6 +3,12 @@
 // Containers
 .component-container {
     flex-wrap: nowrap;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    margin: 0;
+    width: 100%;
+    background-color: variables.$navbar-color;
 }
 
 // Logo
@@ -63,17 +69,13 @@
     align-items: center;
 }
 
-.small-logo-text {
-    display: none;
+.logo-text {
+    display: flex;
+    flex-direction: column;
 }
 
 span {
     font-size: 2rem;
-}
-
-.large-logo-text {
-    margin-left: 1rem;
-    font-size: 1.5rem;
 }
 
 .animated-text span {
@@ -91,38 +93,37 @@ color: #00a0cb;
 .offcanvas {
     background-color: variables.$secondary-color;
     overflow: auto;
+    width: 300px;
 }
 
 .offcanvas-toggle {
     margin: 1rem;
 }
 
-.offCanvas__side-info, .offCanvas__logo {
+.offcanvas-side-info, .offcanvas-logo {
     color:white;
 }
 
-.offCanvas__logo {
+.ooffcanvas-logo {
     border-bottom: 2px solid variables.$primary-color;
 }
 
 .offcanvas-menu a, .offcanvas-menu li, .offcanvas-menu ul{
     list-style: none;
     color: variables.$text-color;
-    font-size: 2rem;
     text-decoration: none;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
 .menu-close i {
-    font-size: 2rem;
+    font-size: 1rem;
 }
 
 .offcanvas-menu {
     border-top: 1px solid variables.$primary-color;
     border-bottom: 1px solid variables.$primary-color;
     margin-top: 1rem;
-    font-size: 2rem;
     text-decoration: none;
     font-weight: bold;
 }
@@ -156,17 +157,20 @@ color: #00a0cb;
         display: block;
     }
 
-    .small-logo-text {
+    .logo-text {
         display: flex;
         flex-direction: column;
         margin-left: 1rem;
+        padding: 0rem;
     }
 
-    .small-logo-text span{
+    .logo-text span {
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 600px) {
+    .logo-text span {
         font-size: 1.5rem;
-    }
-
-    .large-logo-text {
-        display: none;
     }
 }

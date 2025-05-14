@@ -1,0 +1,52 @@
+
+@use '../../assets/scss/base/variables' as variables;
+
+// Container
+.light-border {
+    width: 100%;
+}
+
+.experience-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    width: 100%;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.experience-item.float-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+// Fonts
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: variables.$green-color;
+}
+  
+.experience-item h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: variables.$primary-color;
+}
+
+.meta {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.description {
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+    color: variables.$text-color;
+}
+
+.description li {
+    margin-bottom: 0.4rem;
+}
+  

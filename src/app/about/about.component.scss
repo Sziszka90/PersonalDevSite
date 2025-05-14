@@ -1,4 +1,4 @@
-@use 'base/variables' as variables;
+@use '../../assets/scss/base/variables' as variables;
 
 // Containers
 .column {
@@ -94,21 +94,9 @@
     max-width: 70%;
 }
 
-// Animations
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-@keyframes pulse {
-    0% { transform: scale(100%); }
-    33% { transform: scale(110%); } 
-    66% { transform: scale(110%); }
-    100% { transform: scale(100%); } 
+.download-button {
+    display: flex;
+    flex-direction: column;
 }
 
 // Responsiveness
@@ -146,6 +134,6 @@
 
 @media (max-width: 428px) {
     .custom-button {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
 }
