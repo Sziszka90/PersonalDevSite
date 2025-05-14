@@ -1,5 +1,5 @@
-<div class="nav-container box-border">
-    <button class="offcanvas-toggle text-center" 
+<div class="component-container box-border">
+    <button class="offcanvas-toggle custom-button text-center" 
             data-bs-toggle="offcanvas" 
             data-bs-target="#offcanvasInfo">
             <i class="fa-solid fa-phone text-color-grey"></i>
@@ -8,40 +8,8 @@
         <a class="navbar-brand main-logo" href="#">
             <img src="../../assets/logo.png" alt="logo" />
             <div class="large-logo-text">
-                <span class="text-color-grey default-font animated-text">
-                    <span>S</span>
-                    <span>z</span>
-                    <span>i</span>
-                    <span>l</span>
-                    <span>a</span>
-                    <span>r</span>
-                    <span>d</span>
-                    <span>&nbsp;</span>
-                    <span>F</span>
-                    <span>e</span>
-                    <span>r</span>
-                    <span>e</span>
-                    <span>n</span>
-                    <span>c</span>
-                    <span>z</span>
-                    <span>&nbsp;|&nbsp;</span>
-                    <span>S</span>
-                    <span>o</span>
-                    <span>f</span>
-                    <span>t</span>
-                    <span>w</span>
-                    <span>a</span>
-                    <span>r</span>
-                    <span>e</span>
-                    <span>&nbsp;</span>
-                    <span>E</span>
-                    <span>n</span>
-                    <span>g</span>
-                    <span>i</span>
-                    <span>n</span>
-                    <span>e</span>
-                    <span>e</span>
-                    <span>r</span>
+                <span class="text-color-grey default-font gradient-text animated-text">
+                    Szilard Ferencz | Software Engineer
                 </span>
             </div>
             <div class="small-logo-text">
@@ -52,7 +20,7 @@
     </div>
 
     <nav class="navbar">
-        <button class="navbar-toggle" 
+        <button class="navbar-toggle custom-button" 
                 data-bs-toggle="offcanvas" 
                 data-bs-target="#offcanvasMenu">
             <i class="fa-duotone fa-solid fa-bars text-color-grey"></i>
@@ -60,19 +28,19 @@
 
         <div id="navbarNav">   
             <ul class="navbar-menu default-font">
-              <li><a href="#about">About</a></li>
-              <li><a href="#resume">Resume</a></li>
-              <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
-    </nav>
+    </nav>   
 </div>
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu">
     <div class="offCanvas__body m-3">
         <div class="offCanvas__close-icon menu-close text-end">
-            <button data-bs-dismiss="offcanvas">
-                <i class="fa-solid fa-xmark text-color-blue"></i>
+            <button class="custom-button" data-bs-dismiss="offcanvas">
+                <i class="fa-solid fa-xmark text-color-grey"></i>
             </button>
         </div>
         <div class="title">
@@ -93,8 +61,8 @@
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasInfo">
     <div class="offCanvas__body m-3">
         <div class="offCanvas__close-icon menu-close text-end">
-            <button data-bs-dismiss="offcanvas">
-                <i class="fa-solid fa-xmark text-color-blue"></i>
+            <button class="custom-button" data-bs-dismiss="offcanvas">
+                <i class="fa-solid fa-xmark text-color-grey"></i>
             </button>
         </div>
         <app-get-in-touch></app-get-in-touch>

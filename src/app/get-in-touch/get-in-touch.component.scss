@@ -1,5 +1,5 @@
-@use '../../assets/scss/colors' as colors;
+@use 'base/variables' as variables;
 
 .offCanvas__logo {
-    border-bottom: 2px solid colors.$primary-color;
+    border-bottom: 2px solid variables.$primary-color;
 }

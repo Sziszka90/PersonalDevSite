@@ -1,69 +1,47 @@
-@use 'colors' as colors;
+@use 'base/variables' as variables;
 
 // Containers
-.about-container {
-    margin: 1rem;
-    transform: translateY(120px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.about-container.float-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.top-container {
-    display: flex;
-    flex-direction: row;
-}
-
-.bottom-container {
-    display: block;
-    width: 50%;
-}
-
 .column {
-    flex: 1 1 0; 
-    flex-direction: column;
-    min-width: 0; 
+    display: grid;
+    gap: 1rem;
 }
 
-.left {
-    display: flex;
-    flex-direction: column;
+.left-column {
+    display: grid;
+    max-width: 60%;
+    align-items: flex-start;
+    transform: translateY(120px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.right-column {
+    display: grid;
+    max-width: 40%;
+    justify-items: center;
     align-items: center;
     transform: translateY(120px);
     transition: opacity 1s ease, transform 1s ease;
 }
 
-.right {
-    display: flex;
-    align-items: flex-end;
-    transform: translateY(120px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.column.left.float-in {
+.left-column.float-in 
+{
     opacity: 1;
     transform: translateY(0);
 }
 
-.column.right.float-in {
+.right-column.float-in 
+{
     opacity: 1;
     transform: translateY(0);
 }
 
-.column.right img {
+.right-column img {
     animation: pulse 5s ease infinite;
+    max-width: 70%;
+    max-height: auto;
 }
 
-.right img {
-    width: 25rem;
-    height: auto;
-    max-width: 100%;
-}
-
-.left a {
+.left-column a {
     margin-top: 2rem;
 }
 
@@ -79,15 +57,8 @@
 
 .introduction-summary span{
     margin-top: 2rem;
-    color: colors.$green-color;
+    color: variables.$green-color;
 }
-
-.gradient-text {
-    font-weight: bold;
-    background-image: linear-gradient(to right, colors.$primary-color, colors.$green-color); 
-    -webkit-background-clip: text; 
-    color: transparent; 
-  }
 
 // Carousel
 .icon-carousel {
@@ -118,13 +89,9 @@
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-button a {
-    text-decoration: none;
-    color: white;
-}
-
 .custom-button {
     margin-top: 3rem;
+    max-width: 70%;
 }
 
 // Animations
@@ -146,17 +113,39 @@ button a {
 
 // Responsiveness
 @media(max-width: 1043px) {
-    .top-container {
+    .row-container {
+        display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
-    .right {
+    .right-column {
         align-items: center;
+        margin-top: 1rem;
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    .left-column {
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        max-width: 100%;
+    }
+
+    .right-column img {
+        max-width: 50%;
     }
 }
 
 @media (max-width: 600px) {
     .custom-button {
         padding: 1rem;
+    }
+}
+
+@media (max-width: 428px) {
+    .custom-button {
+        font-size: 0.75rem;
     }
 }

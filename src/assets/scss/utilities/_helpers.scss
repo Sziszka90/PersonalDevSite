@@ -1,0 +1,86 @@
+@use "base/variables";
+
+.box-border {
+    border: 2px solid variables.$primary-color;
+    border-radius: 10px;
+}
+
+.light-border {
+    position: relative;
+    padding: 2px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.light-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(90deg, transparent, variables.$green-color, transparent);
+    border-radius: 10px;
+    z-index: 1;
+    animation: border-light 5s linear infinite;
+    background-size: 300% 300%;
+}
+
+@keyframes border-light {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.bounce-button {
+    display: inline-block;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .bounce-button:hover {
+    animation: bounce 0.6s ease infinite;
+  }
+  
+  .custom-button {
+    padding: 1rem;    
+    background-color: variables.$primary-color;
+    font-size: 1rem;       
+    border: 3px solid variables.$primary-color; 
+    border-radius: 20px;   
+    outline: none;       
+    max-width: 100%;          
+    transition: border-color 0.3s;
+    align-items: center;
+    color: white;
+  }
+  
+  .custom-button:active {
+    background-color: variables.$secondary-color;
+  }
+  
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    75% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+}

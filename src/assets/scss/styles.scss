@@ -1,23 +1,24 @@
 
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@forward "colors";
-@forward "fonts";
-@use "colors";
-@use "fonts";
+@forward "base/variables";
+@use "base/variables";
+
+@forward "base/typography";
+@use "base/typography";
+
+@forward "layout/container";
+@use "layout/container";
+
+@forward "layout/grid";
+@use "layout/grid";
+
+@forward "utilities/helpers";
+@use "utilities/helpers";
+
 @use '@angular/material' as mat;
 
-html {
-  @include mat.theme((
-    color: (
-      theme-type: light,
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
-  ));
-}
+
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming@use '@angular/material' as mat;
 
@@ -31,6 +32,7 @@ html {
     typography: Roboto,
     density: 0,
   ));
+  scroll-behavior: smooth;
 }/* You can add global styles to this file, and also import other style files */
 
 html, body {
@@ -41,7 +43,7 @@ html, body {
 }
 
 body {
-    background-color: colors.$background-color;
+    background-color: variables.$background-color;
     background-image: url('/assets/bg-dark.png');
     background-size: contain;
     background-repeat: no-repeat;
@@ -50,129 +52,11 @@ body {
     overflow-x: hidden;
 }
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: 2;
-  border-radius: 8px;
-  background-color: colors.$secondary-color;
-  width: 100%;
-  padding: 3rem;
-  align-items: center;
-  color: colors.$green-color
+a {
+  text-decoration: none;
+  color: variables.$text-color;
 }
 
-.box-border {
-    border: 2px solid colors.$primary-color;
-    border-radius: 10px;
-}
 
-.default-font {
-  font-family: "Cal Sans";
-  font-size: large;
-  line-height: 1.5;
-}
 
-.letter-space {
-  letter-spacing: 0.1rem;
-}
 
-.light-border {
-  position: relative;
-  padding: 2px;
-  border: 2px solid transparent;
-  background-clip: padding-box;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.text-color-grey {
-  color: colors.$text-color;
-}
-
-.text-color-green {
-color: colors.$green-color;
-}
-
-.text-color-blue {
-color: colors.$primary-color;
-}
-
-@keyframes border-light {
-  0% {
-      background-position: 0% 50%;
-  }
-  100% {
-      background-position: 100% 50%;
-  }
-}
-
-.light-border::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(90deg, transparent, colors.$primary-color, transparent);
-  border-radius: 10px;
-  z-index: 1;
-  animation: border-light 5s linear infinite;
-  background-size: 300% 300%;
-}
-
-@media(max-width: 400px) {
-  .default-font {
-    font-family: fonts.$default-font;
-    font-size: medium;
-  }
-}
-
-.bounce-button {
-  display: inline-block;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: transform 0.2s ease-in-out;
-}
-
-.bounce-button:hover {
-  animation: bounce 0.6s ease infinite;
-}
-
-.custom-button {
-  padding: 10px 30px;    
-  background-color: colors.$primary-color;
-  font-size: 1rem;       
-  border: 3px solid colors.$primary-color; 
-  border-radius: 20px;   
-  outline: none;       
-  max-width: 100%;          
-  transition: border-color 0.3s;
-  margin: 1rem;
-  align-items: center;
-}
-
-.custom-button:active {
-  background-color: colors.$secondary-color;
-}
-
-@keyframes bounce {
-  0% {
-    transform: translateY(0);
-  }
-  25% {
-    transform: translateY(-10px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  75% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}

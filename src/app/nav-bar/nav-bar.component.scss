@@ -1,4 +1,9 @@
-@use '../../assets/scss/colors' as colors;
+@use '../../assets/scss/base/variables' as variables;
+
+// Containers
+.component-container {
+    flex-wrap: nowrap;
+}
 
 // Logo
 .main-logo {
@@ -15,20 +20,14 @@
     padding: 1rem;
 }
 
-// Containers
-.nav-container {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 1rem;
-    align-items: center;
-    padding: 0;
-    background-color: colors.$secondary-color;
-}
-
 // NavBar
 .navbar {
     margin-left: auto;
-    padding: 1rem 2rem;
+
+}
+
+.navbar-toggle {
+    margin: 1rem;
 }
 
 .navbar-menu {
@@ -43,18 +42,12 @@
 }
   
 .navbar-menu li a {
-    text-decoration: none;
-    color: colors.$text-color;
+    color: variables.$text-color;
 }
   
 .navbar-menu li a:hover {
-    color: colors.$primary-color;
+    color: variables.$primary-color;
     transition: background-color 0.5s ease, color 0.5s ease; /* adjust duration */
-}
-
-button {
-    border: none;
-    background-color: colors.$secondary-color;
 }
 
 .navbar-toggle {
@@ -96,8 +89,12 @@ color: #00a0cb;
 
 // OffCanvas
 .offcanvas {
-    background-color: colors.$secondary-color;
+    background-color: variables.$secondary-color;
     overflow: auto;
+}
+
+.offcanvas-toggle {
+    margin: 1rem;
 }
 
 .offCanvas__side-info, .offCanvas__logo {
@@ -105,12 +102,12 @@ color: #00a0cb;
 }
 
 .offCanvas__logo {
-    border-bottom: 2px solid colors.$primary-color;
+    border-bottom: 2px solid variables.$primary-color;
 }
 
 .offcanvas-menu a, .offcanvas-menu li, .offcanvas-menu ul{
     list-style: none;
-    color: colors.$text-color;
+    color: variables.$text-color;
     font-size: 2rem;
     text-decoration: none;
     margin-top: 2rem;
@@ -122,8 +119,8 @@ color: #00a0cb;
 }
 
 .offcanvas-menu {
-    border-top: 1px solid colors.$primary-color;
-    border-bottom: 1px solid colors.$primary-color;
+    border-top: 1px solid variables.$primary-color;
+    border-bottom: 1px solid variables.$primary-color;
     margin-top: 1rem;
     font-size: 2rem;
     text-decoration: none;
@@ -131,15 +128,9 @@ color: #00a0cb;
 }
 
 .offcanvas-menu a:hover, li:hover{
-    color: colors.$primary-color;
+    color: variables.$primary-color;
     transition: background-color 0.5s ease, color 0.5s ease; /* adjust duration */
 }
-
-.offcanvas-toggle {
-    padding: 2rem;
-    background-color: colors.$background-color;
-}
-
 
 // Responsiveness
 @media (max-width: 589px) {
@@ -162,7 +153,6 @@ color: #00a0cb;
     }
 
     .navbar-toggle {
-        color: white;
         display: block;
     }
 

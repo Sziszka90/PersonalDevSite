@@ -1,4 +1,4 @@
-@use '../../assets/scss/colors' as colors;
+@use '../../assets/scss/base/variables' as variables;
 
 
 // Containers
@@ -46,7 +46,7 @@ h3 {
 input {
     padding: 10px 30px;     
     font-size: 20px;       
-    border: 3px solid colors.$primary-color; 
+    border: 3px solid variables.$primary-color; 
     border-radius: 20px;   
     outline: none;       
     width: 100%;          
@@ -58,7 +58,7 @@ input {
 textarea {
     padding: 1rem;  
     font-size: 20px;       
-    border: 3px solid colors.$primary-color; 
+    border: 3px solid variables.$primary-color; 
     border-radius: 20px;   
     outline: none;       
     width: 100%;          
@@ -72,7 +72,7 @@ textarea {
 }
   
 input:focus {
-    border-color: colors.$green-color; 
+    border-color: variables.$green-color; 
 }
 
 // Responsiveness

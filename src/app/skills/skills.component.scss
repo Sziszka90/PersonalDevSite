@@ -1,4 +1,4 @@
-@use 'colors' as colors;
+@use 'base/variables' as variables;
 
 // Containers
 .skills-container {
@@ -8,7 +8,7 @@
 // Slides
 .slide {
     width: 10rem;
-    background-color: colors.$secondary-color;
+    background-color: variables.$secondary-color;
 }
 
 // Responsiveness
