@@ -10,7 +10,7 @@
     width: 100%;
     padding: 3rem;
     align-items: center;
-    color: variables.$green-color
+    color: variables.$green-color;
 }
 
 .component-container {
@@ -20,6 +20,7 @@
     margin: 1rem;
     padding: 0;
     background-color: variables.$secondary-color;
+    border-radius: 20px;
 }
 
 .component-container.float-in 

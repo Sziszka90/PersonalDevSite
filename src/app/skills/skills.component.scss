@@ -1,0 +1,83 @@
+@use '../../assets/scss/base/variables' as variables;
+
+// Containers
+.light-border {
+    width: 100%;
+}
+
+.main-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    max-width: 100%;
+}
+  
+.bubble {
+    width: 120px;
+    height: 120px;
+    background-color: variables.$background-color;
+    border-radius: 50%;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    animation: float 4s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.5s);
+    animation-play-state: running;
+    position: relative;
+
+    img {
+      width: 60%;
+      height: 60%;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    &:hover {
+        animation-play-state: paused;
+
+        .bubble-label {
+            opacity: 1;
+        }
+    }
+
+
+  .bubble-label {
+    position: absolute;
+    bottom: -25px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    border-radius: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+}
+
+// Fonts
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: variables.$green-color;
+}
+
+// Effects
+@keyframes float {
+    0%   { transform: translate(0px, 0px) scale(1); }
+    25%  { transform: translate(10px, -8px) scale(1); }
+    50%  { transform: translate(-12px, 6px) scale(1); }
+    75%  { transform: translate(8px, -4px) scale(1); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
