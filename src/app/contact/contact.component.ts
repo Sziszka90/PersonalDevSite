@@ -38,27 +38,39 @@ export class ContactComponent {
 
   public sendEmail() {
     const templateParams = {
-      from_name: this.contactForm.value.name,
-      from_email: this.contactForm.value.email,
+      name: this.contactForm.value.name,
+      email: this.contactForm.value.email,
+      subject: this.contactForm.value.subject,
+      phone: this.contactForm.value.phone,
       message: this.contactForm.value.message
     };
 
     emailjs.send(this.SERVICE_ID, this.TEMPLATE_ID, templateParams, this.PUBLIC_KEY)
       .then((response) => {
         console.log('Email sent successfully', response);
-        this.showToast('Email sent successfully') 
+        this.showInfoToast('Email sent successfully') 
       })
       .catch((error) => {
         console.error('Error sending email:', error);
-        this.showToast('Error sending email:' + error) 
+        this.showErrorToast('Error sending email:' + error) 
       });
   }
 
-  showToast(message: string) {
+  showInfoToast(message: string) {
     this.snackBar.open(message, 'Close', {
-      duration: 5000,
+      duration: 7000,
       horizontalPosition: 'center',
-      verticalPosition: 'bottom'
+      verticalPosition: 'bottom',
+      panelClass: ['info-snackbar']
+    });
+  }
+
+  showErrorToast(message: string) {
+    this.snackBar.open(message, 'Close', {
+      duration: 7000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      panelClass: ['error-snackbar']
     });
   }
 }
