@@ -10,6 +10,13 @@
     flex-direction: column;
     width: 50%;
     height: 100%;
+    transform: translateX(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.form-container.float-in {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .message-container {
@@ -21,6 +28,14 @@
 
 .contact-info-container {
     width: 50%;
+    transform: translateX(60px); 
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.contact-info-container.float-in {
+    opacity: 1;
+    transform: translateX(0); 
 }
 
 // Forms

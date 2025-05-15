@@ -3,11 +3,12 @@ import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import emailjs from 'emailjs-com';
 import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 import { GetInTouchComponent } from '../get-in-touch/get-in-touch.component';
+import { FloatInOnScrollDirective } from '../directives/float-in.directive';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [ReactiveFormsModule, MatSnackBarModule, GetInTouchComponent],
+  imports: [ReactiveFormsModule, MatSnackBarModule, GetInTouchComponent, FloatInOnScrollDirective],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })

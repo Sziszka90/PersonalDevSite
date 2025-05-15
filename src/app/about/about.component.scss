@@ -80,23 +80,30 @@
 }
 
 // Resume
-.resume {
+.custom-button {
+    margin-top: 3rem;
+    max-width: 70%;
+    width: 180px;
+    height: 75px;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    a {
+        font-size: 1.25rem;
+    }
 }
 
-.resume:hover {
+.github a{
+    font-size: 2rem;
+}
+
+.custom-button:hover {
     transform: scale(1.1); 
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
-.custom-button {
-    margin-top: 3rem;
-    max-width: 70%;
-}
-
-.download-button {
+.links {
     display: flex;
-    flex-direction: column;
+    gap: 1rem;
 }
 
 // Responsiveness
@@ -123,6 +130,10 @@
 
     .right-column img {
         max-width: 50%;
+    }
+
+    .links {
+        justify-content: center;
     }
 }
 

@@ -23,9 +23,11 @@
 
         <div id="navbarNav">   
             <ul class="navbar-menu default-font">
-            <li><a href="#about">About</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#areas">Areas</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>   
@@ -45,9 +47,11 @@
         </div>
         <div id="navbarNav">   
             <ul class="offcanvas-menu default-font">
-            <li><a routerLink="" [fragment]="'about'">About</a></li>
-            <li><a routerLink="" [fragment]="'resume'">Resume</a></li>
-            <li><a routerLink="" [fragment]="'contact'">Contact</a></li>
+                <li><a (click)="closeOffcanvas()" href="#about">About</a></li>
+                <li><a (click)="closeOffcanvas()" href="#areas">Areas</a></li>
+                <li><a (click)="closeOffcanvas()" href="#skills">Skills</a></li>
+                <li><a (click)="closeOffcanvas()" href="#experiences">Experiences</a></li>
+                <li><a (click)="closeOffcanvas()" href="#contact">Contact</a></li>
             </ul>
         </div>
     </div>

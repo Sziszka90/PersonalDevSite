@@ -11,10 +11,11 @@
     overflow: hidden;
 }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 2rem;
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 5rem;
     justify-items: center;
     max-width: 100%;
 }
@@ -33,16 +34,21 @@
     animation-delay: calc(var(--i) * 0.5s);
     animation-play-state: running;
     position: relative;
+    flex-shrink: 0;
 
     img {
-      width: 60%;
-      height: 60%;
+      width: 70%;
+      height: 70%;
       object-fit: contain;
       pointer-events: none;
     }
 
     &:hover {
         animation-play-state: paused;
+
+        img {
+          transform: scale(2);
+        }
 
         .bubble-label {
             opacity: 1;
