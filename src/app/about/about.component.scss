@@ -104,6 +104,7 @@
 .links {
     display: flex;
     gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 // Responsiveness
@@ -137,9 +138,14 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 635px) {
     .custom-button {
         padding: 1rem;
+    }
+
+    .links {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
