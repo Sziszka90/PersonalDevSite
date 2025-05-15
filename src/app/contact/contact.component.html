@@ -21,7 +21,7 @@
                                     <textarea formControlName="message" placeholder="This is your message!" class="message-form" name="message"></textarea>
                                 </div>
                                 <div class="form-row">
-                                    <button class="submit-button custom-button bounce-button" type="submit" [disabled]="false">Submit</button>
+                                    <button class="submit-button custom-button bounce-button" type="submit" [disabled]="contactForm.invalid">Submit</button>
                                 </div>
                             </form>
                         </div> 
