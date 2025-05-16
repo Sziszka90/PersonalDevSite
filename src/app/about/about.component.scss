@@ -1,17 +1,24 @@
 @use '../../assets/scss/base/variables' as variables;
 
 // Containers
-.column {
-    display: grid;
-    gap: 1rem;
-}
-
 .left-column {
     display: grid;
     max-width: 60%;
     align-items: flex-start;
     transform: translateY(120px);
     transition: opacity 1s ease, transform 1s ease;
+}
+
+.left-column.float-in 
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.left-column {
+    a {
+        margin-top: 2rem;
+    }
 }
 
 .right-column {
@@ -21,12 +28,6 @@
     align-items: center;
     transform: translateY(120px);
     transition: opacity 1s ease, transform 1s ease;
-}
-
-.left-column.float-in 
-{
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .right-column.float-in 
@@ -41,10 +42,6 @@
     max-height: auto;
 }
 
-.left-column a {
-    margin-top: 2rem;
-}
-
 // Introduction
 .intoduction {
     margin-top: 2rem;
@@ -55,9 +52,11 @@
     margin-top: 2rem;
 }
 
-.introduction-summary span{
-    margin-top: 2rem;
-    color: variables.$green-color;
+.introduction-summary {
+    span {
+        margin-top: 2rem;
+        color: variables.$green-color;
+    }
 }
 
 // Carousel
@@ -74,12 +73,14 @@
     white-space: nowrap;
 }
 
-.carousel-track i {
-    font-size: 2rem;
-    color: #00a0cb;
+.carousel-track {
+    i {
+        font-size: 2rem;
+        color: #00a0cb;
+    }
 }
 
-// Resume
+// Buttons
 .custom-button {
     margin-top: 3rem;
     max-width: 70%;
@@ -92,13 +93,15 @@
     }
 }
 
-.github a{
-    font-size: 2rem;
-}
-
 .custom-button:hover {
     transform: scale(1.1); 
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.github {
+    a {
+        font-size: 2rem;
+    }
 }
 
 .links {
@@ -129,8 +132,10 @@
         max-width: 100%;
     }
 
-    .right-column img {
-        max-width: 50%;
+    .right-column {
+        img {
+            max-width: 50%;
+        }
     }
 
     .links {

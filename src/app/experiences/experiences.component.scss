@@ -28,10 +28,12 @@ h2 {
     color: variables.$green-color;
 }
   
-.experience-item h3 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: variables.$primary-color;
+.experience-item {
+    h3 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: variables.$primary-color;
+    }
 }
 
 .meta {
@@ -46,7 +48,9 @@ h2 {
     color: variables.$text-color;
 }
 
-.description li {
-    margin-bottom: 0.4rem;
+.description {
+    li {
+        margin-bottom: 0.4rem;
+    }
 }
   

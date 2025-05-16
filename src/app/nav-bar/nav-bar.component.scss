@@ -17,9 +17,11 @@
     display: flex;
 }
 
-.main-logo img {
-    width: 3rem;
-    height: 3rem;
+.main-logo {
+    img {
+        width: 3rem;
+        height: 3rem;
+    }
 }
 
 .logo-text {
@@ -49,12 +51,20 @@
 }
   
 .navbar-menu li a {
-    color: variables.$text-color;
+    li {
+        a {
+            color: variables.$text-color;
+        }
+    }
 }
   
 .navbar-menu li a:hover {
-    color: variables.$primary-color;
-    transition: background-color 0.5s ease, color 0.5s ease; /* adjust duration */
+    li {
+        a:hover {
+            color: variables.$primary-color;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+    }
 }
 
 .navbar-toggle {
@@ -65,9 +75,11 @@
     margin-left: 1rem;
 }
 
-.title a {
-    display: flex;
-    align-items: center;
+.title {
+    a {
+        display: flex;
+        align-items: center;
+    }
 }
 
 .logo-text {
@@ -79,15 +91,19 @@ span {
     font-size: 2rem;
 }
 
-.animated-text span {
-    display: inline-block;
-    transition: transform 0.3s ease;
-    cursor: default;
+.animated-text {
+    span {
+        display: inline-block;
+        transition: transform 0.3s ease;
+        cursor: default;
+    }
 }
   
 .animated-text span:hover {
-transform: translateY(-5px) scale(1.1);
-color: #00a0cb;
+    span:hover {
+        transform: translateY(-5px) scale(1.1);
+        color: #00a0cb;
+    }
 }
 
 // OffCanvas
@@ -118,7 +134,9 @@ color: #00a0cb;
 }
 
 .menu-close i {
-    font-size: 1rem;
+    i {
+        font-size: 1rem;
+    }
 }
 
 .offcanvas-menu {
