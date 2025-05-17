@@ -17,22 +17,12 @@ cd personal-developer-site
 ### Install
 npm install
 
+### Production build
+ng build --configuration=production
+
 ### Dev server
 ng serve
 ### → http://localhost:4200/
-
-### Production build
-ng build --configuration=production
-
-### Clone
-git clone https://github.com/yourusername/personal-developer-site.git
-cd personal-developer-site
-
-### Install
-npm install
-
-### Production build
-ng build --configuration=production
 
 ## 📦 Deployment
 Any static host works (GitHub Pages, Netlify, Vercel, Firebase, etc.).
