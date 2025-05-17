@@ -29,9 +29,12 @@
 }
 
 .gradient-text {
-    background-image: linear-gradient(to right, variables.$primary-color, variables.$green-color); 
+    width:fit-content;
+    background-image: linear-gradient(90deg, variables.$primary-color, variables.$green-color); 
     -webkit-background-clip: text; 
     color: transparent; 
+    background-clip: text;    
+    -webkit-text-fill-color: transparent;
   }
 
 @media(max-width: 500px) {
