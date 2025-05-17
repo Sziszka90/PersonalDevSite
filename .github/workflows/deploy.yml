@@ -37,7 +37,7 @@ jobs:
       # 5. Upload the build output as a Pages artifact
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist/personal-dev-site      # ← replace with your actual dist folder
+          path: ./dist/personal-dev-site/browser      # ← replace with your actual dist folder
 
   deploy:
     needs: build
