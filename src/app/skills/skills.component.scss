@@ -47,6 +47,7 @@
 
     &:hover {
         animation-play-state: paused;
+        z-index: 999;
 
         img {
           transform: scale(2);
@@ -79,6 +80,7 @@ h2 {
     text-align: center;
     margin-bottom: 3rem;
     color: variables.$green-color;
+    line-height: 3rem;
 }
 
 // Effects
