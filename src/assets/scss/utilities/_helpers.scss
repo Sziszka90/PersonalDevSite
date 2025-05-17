@@ -75,6 +75,11 @@
   border: 1px solid #aaa;
 }
 
+.disable-button {
+  pointer-events: none; 
+  color: gray;
+}
+
 .error-snackbar {
   padding: 1rem;
   background-color: #f44336; 
