@@ -10,32 +10,28 @@ My personal developer website built with **Angular 19** and **SCSS**. It highli
 
 
 ## 🛠️ Getting Started
-# Clone
+### Clone
 git clone https://github.com/yourusername/personal-developer-site.git
 cd personal-developer-site
 
-# Install
+### Install
 npm install
 
-# Dev server
+### Dev server
 ng serve
-# → http://localhost:4200/
+### → http://localhost:4200/
 
-# Production build
+### Production build
 ng build --configuration=production
 
-# Clone
+### Clone
 git clone https://github.com/yourusername/personal-developer-site.git
 cd personal-developer-site
 
-# Install
+### Install
 npm install
 
-# Dev server
-ng serve
-# → http://localhost:4200/
-
-# Production build
+### Production build
 ng build --configuration=production
 
 ## 📦 Deployment
