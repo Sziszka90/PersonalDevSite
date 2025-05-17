@@ -1,27 +1,62 @@
-# PersonalDevSite
+# Personal Developer Site
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+My personal developer website built with **Angular 19** and **SCSS**. It highlights my projects, skills, and professional background.
 
-## Development server
+## 🚀 Tech Stack
+- Angular 19 + Angular CLI  
+- TypeScript  
+- SCSS (modular: variables & mixins)  
+- HTML5 / CSS3  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## 🛠️ Getting Started
+# Clone
+git clone https://github.com/yourusername/personal-developer-site.git
+cd personal-developer-site
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Install
+npm install
 
-## Build
+# Dev server
+ng serve
+# → http://localhost:4200/
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Production build
+ng build --configuration=production
 
-## Running unit tests
+# Clone
+git clone https://github.com/yourusername/personal-developer-site.git
+cd personal-developer-site
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+# Install
+npm install
 
-## Running end-to-end tests
+# Dev server
+ng serve
+# → http://localhost:4200/
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Production build
+ng build --configuration=production
 
-## Further help
+## 📦 Deployment
+Any static host works (GitHub Pages, Netlify, Vercel, Firebase, etc.).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+GitHub Pages example
+
+ng build --configuration=production --base-href "/your-repo-name/"
+
+npx angular-cli-ghpages --dir=dist/personal-developer-site
+
+## 🎨 Styling Notes
+Global SCSS lives in /src/assets/scss.
+
+Component styles are encapsulated (ViewEncapsulation.Emulated).
+
+Utility mixins + variables keep things DRY and consistent.
+
+## 👤 Author
+Szilard Ferencz
+szilardferencz.dev • LinkedIn • GitHub
+
+## 📄 License
+Distributed under the MIT License. See LICENSE for details.
