@@ -1,4 +1,4 @@
-@use '../../assets/scss/base/variables' as variables;
+@use 'base/variables' as variables;
 
 // Containers
 .component-container {
@@ -58,7 +58,7 @@
     }
 }
   
-.navbar-menu li a:hover {
+.navbar-menu {
     li {
         a:hover {
             color: variables.$primary-color;

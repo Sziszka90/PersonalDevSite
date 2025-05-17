@@ -1,12 +1,10 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { Offcanvas } from 'bootstrap';
 import { GetInTouchComponent } from '../get-in-touch/get-in-touch.component';
-import { RouterLink } from '@angular/router';
-
 
 @Component({
     selector: 'app-nav-bar',
-    imports: [RouterLink, GetInTouchComponent],
+    imports: [GetInTouchComponent],
     standalone: true,
     templateUrl: './nav-bar.component.html',
     styleUrl: './nav-bar.component.scss'
