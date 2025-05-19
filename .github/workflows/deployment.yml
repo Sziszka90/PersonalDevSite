@@ -32,7 +32,7 @@ jobs:
       - run: npm ci
 
       # 4. Build the Angular app
-      - run: npx ng build --configuration=production --base-href "/PersonalDevSite"   # adjust base‑href if repo name differs
+      - run: npx ng build --configuration=production --base-href "/"   # adjust base‑href if repo name differs
 
       # 5. Upload the build output as a Pages artifact
       - uses: actions/upload-pages-artifact@v3
