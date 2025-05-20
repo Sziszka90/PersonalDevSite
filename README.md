@@ -41,7 +41,7 @@ Component styles are encapsulated (ViewEncapsulation.Emulated).
 Utility mixins + variables keep things DRY and consistent.
 
 ## 👤 Author
-Szilard Ferencz • szilardferencz.dev • LinkedIn • GitHub
+Szilard Ferencz • [szilardferencz.dev](www.szilardferencz.dev) • [LinkedIn](https://www.linkedin.com/in/szilard-ferencz/) • [GitHub](https://github.com/Sziszka90) 
 
 ## 📄 License
 Distributed under the MIT License. See LICENSE for details.
