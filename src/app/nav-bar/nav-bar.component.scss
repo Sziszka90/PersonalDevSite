@@ -110,7 +110,11 @@ span {
 .offcanvas {
     background-color: variables.$secondary-color;
     overflow: auto;
-    width: 300px;
+    width: 350px;
+}
+
+.offcanvas-body {
+    margin: 0.5rem 0.5rem;
 }
 
 .offcanvas-toggle {
