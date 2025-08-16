@@ -27,6 +27,12 @@ jobs:
 
       - run: npm ci
 
+      - name: Generate environment.prod.ts from template
+        run: |
+          #export API_URL="${{ secrets.BACKEND_URL }}"
+          envsubst < src/environments/environment.prod.template.ts > src/environments/environment.prod.ts
+        working-directory: ./
+
       - run: npx ng build --configuration=production --base-href "/"
 
       - uses: actions/upload-pages-artifact@v3
