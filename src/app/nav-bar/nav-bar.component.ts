@@ -3,11 +3,11 @@ import { Offcanvas } from 'bootstrap';
 import { GetInTouchComponent } from '../get-in-touch/get-in-touch.component';
 
 @Component({
-    selector: 'app-nav-bar',
-    imports: [GetInTouchComponent],
-    standalone: true,
-    templateUrl: './nav-bar.component.html',
-    styleUrl: './nav-bar.component.scss'
+  selector: 'app-nav-bar',
+  imports: [GetInTouchComponent],
+  standalone: true,
+  templateUrl: './nav-bar.component.html',
+  styleUrl: './nav-bar.component.scss'
 })
 export class NavBarComponent implements AfterViewInit {
   private offcanvasElementInfo!: HTMLElement;

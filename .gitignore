@@ -2,3 +2,4 @@ node_modules
 .angular
 .vscode
 dist
+.DS_Store

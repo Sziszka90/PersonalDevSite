@@ -48,11 +48,11 @@ export class ContactComponent {
     emailjs.send(this.SERVICE_ID, this.TEMPLATE_ID, templateParams, this.PUBLIC_KEY)
       .then((response) => {
         console.log('Email sent successfully', response);
-        this.showInfoToast('Email sent successfully') 
+        this.showInfoToast('Email sent successfully'); 
       })
       .catch((error) => {
         console.error('Error sending email:', error);
-        this.showErrorToast('Error sending email:' + error) 
+        this.showErrorToast('Error sending email:' + error); 
       });
   }
 

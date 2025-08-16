@@ -1,14 +1,17 @@
 {
-  "name": "PersonalDevSite",
+  "name": "personal-dev-site",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "private": true,
+  "type": "module",
   "dependencies": {
     "@angular/animations": "^19.2.9",
     "@angular/cdk": "^19.2.15",
@@ -40,6 +43,9 @@
     "@angular/compiler-cli": "^19.2.9",
     "@types/bootstrap": "^5.2.10",
     "@types/jasmine": "~5.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.39.1",
+    "@typescript-eslint/parser": "^8.39.1",
+    "eslint": "^9.33.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
