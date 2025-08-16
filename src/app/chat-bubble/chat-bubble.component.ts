@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ViewChild, ElementRef } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { Conversation } from '../../models/conversation.dto';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./chat-bubble.component.scss']
 })
 export class ChatBubbleComponent {
+  @ViewChild('chatBody') chatBody!: ElementRef<HTMLDivElement>;
   apiService = inject(ApiService);
   message = '';
   response = '';
@@ -46,21 +47,32 @@ export class ChatBubbleComponent {
     }
   }
 
+  private scrollToBottom() {
+    setTimeout(() => {
+      if (this.chatBody) {
+        this.chatBody.nativeElement.scrollTop = this.chatBody.nativeElement.scrollHeight;
+      }
+    }, 0);
+  }
+
   sendMessage() {
     if (!this.message.trim()) return;
     const msgToSend = this.message;
     this.message = '';
     this.loading = true;
     this.messages.push({ text: msgToSend, sender: 'user' });
+    this.scrollToBottom();
     this.apiService.post<Conversation>({ message: msgToSend }).subscribe({
       next: res => {
         const reply = res.message || (res as any).Message || 'No response';
         this.messages.push({ text: reply, sender: 'assistant' });
         this.loading = false;
+        this.scrollToBottom();
       },
       error: err => {
         this.messages.push({ text: 'Error sending message.', sender: 'assistant' });
         this.loading = false;
+        this.scrollToBottom();
       }
     });
   }
