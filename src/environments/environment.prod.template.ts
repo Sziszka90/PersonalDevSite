@@ -1,3 +1,4 @@
 export const environment = {
-  API_URL: 'https://your-backend-url.com'
+  production: true,
+  API_URL: "${API_URL}"
 };
