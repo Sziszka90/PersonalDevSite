@@ -1,4 +1,4 @@
-<div class="chat-bubble" [class.open]="showBubble"
+<div #chatBubble class="chat-bubble" [class.open]="showBubble"
      [ngStyle]="{bottom: bubblePosition.bottom + 'px', right: bubblePosition.right + 'px'}">
   <button class="chat-toggle"
     (click)="toggleBubble()"

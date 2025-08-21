@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ChatBubbleComponent {
   @ViewChild('chatBody') chatBody!: ElementRef<HTMLDivElement>;
+  @ViewChild('chatBubble') chatBubble!: ElementRef<HTMLDivElement>;
   apiService = inject(ApiService);
   message = '';
   response = '';
@@ -41,8 +42,7 @@ export class ChatBubbleComponent {
   }
 
   handleDocumentClick(event: MouseEvent) {
-    const chatBubble = document.querySelector('.chat-bubble');
-    if (this.showBubble && chatBubble && !chatBubble.contains(event.target as Node)) {
+    if (this.showBubble && this.chatBubble && !this.chatBubble.nativeElement.contains(event.target as Node)) {
       this.showBubble = false;
     }
   }
@@ -112,9 +112,8 @@ export class ChatBubbleComponent {
     }
     const dx = clientX - this.dragOffsetX;
     const dy = clientY - this.dragOffsetY;
-    const chatBubble = document.querySelector('.chat-bubble') as HTMLElement;
-    if (chatBubble) {
-      const bubbleRect = chatBubble.getBoundingClientRect();
+    if (this.chatBubble) {
+      const bubbleRect = this.chatBubble.nativeElement.getBoundingClientRect();
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
       let newRight = this.bubblePosition.right - dx;
