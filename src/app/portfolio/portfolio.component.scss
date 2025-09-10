@@ -1,0 +1,76 @@
+
+@use 'base/variables' as variables;
+@use 'layout/card' as card;
+
+.portfolio-link {
+    color: variables.$green-color;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(67,181,129,0.08);
+    transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+    display: inline-block;
+    margin: 1rem;
+}
+
+.portfolio-link:hover {
+    background: linear-gradient(90deg, variables.$green-color 0%, variables.$green-color 100%);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(87,75,199,0.12);
+    text-decoration: none;
+}
+
+// Containers
+.light-border {
+    width: 100%;
+}
+
+.main-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 2rem;
+}
+
+.experience-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+    width: 100%;
+    transform: translateY(60px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.experience-item.float-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.experience-item {
+    .position {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+    }
+}
+
+mat-card {
+    max-width: 50%;
+}
+
+// Fonts
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: variables.$green-color;
+    line-height: 3rem;
+}
+
+// Responsive
+@media (max-width: 1400px) {
+    .portfolio-card {
+        max-width: 100%;
+    }
+}
