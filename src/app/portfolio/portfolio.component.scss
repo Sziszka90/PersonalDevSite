@@ -1,6 +1,27 @@
-
 @use 'base/variables' as variables;
 @use 'layout/card' as card;
+
+.readme-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #f3f7ff 0%, #eafaf1 100%);
+    color: #574bc7;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(87,75,199,0.08);
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    margin-top: 1rem;
+}
+
+.readme-link:hover {
+    background: linear-gradient(90deg, variables.$primary-color 0%, variables.$secondary-color 100%);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(67,181,129,0.12);
+    text-decoration: none;
+}
 
 .portfolio-link {
     color: variables.$green-color;
