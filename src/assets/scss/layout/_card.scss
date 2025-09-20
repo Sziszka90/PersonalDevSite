@@ -26,6 +26,7 @@ mat-card-title {
     transform: translateY(60px);
     transition: opacity 0.8s ease, transform 0.8s ease;
     align-items: center;
+    cursor: pointer;
 }
 
 .card.float-in {
