@@ -87,6 +87,19 @@ mat-card {
     max-width: 50%;
 }
 
+lib-ngx-image-zoom img {
+  transform: scale(0.3) !important;
+  transform-origin: top left;
+}
+
+.zoom-wrapper {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    cursor: zoom-in;
+}
+
 // Fonts
 h2 {
     font-size: 3rem;
