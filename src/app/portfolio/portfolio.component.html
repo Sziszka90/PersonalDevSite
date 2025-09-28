@@ -18,16 +18,12 @@
                         </p>
                         <p>Key Features:</p>
                         <ul>
-                            <li>User registration with email confirmation, password reset, and token-based authentication</li>
+                            <li>User registration with email confirmation, password reset and token-based authentication using HTTP Only cookies</li>
                             <li>CRUD operations for transactions and transaction groups</li>
                             <li>CSV import for automatic transaction creation</li>
-                            <li>LLM integration for smart transaction categorization</li>
+                            <li>LLM integration for smart transaction categorization and queries</li>
                             <li>Transaction filtering, sorting, and currency switching</li>
                             <li>Weekly background job to fetch exchange rates from external APIs</li>
-                            <li>Default transaction groups at user signup</li>
-                            <li>Token management cache, MSSQL database</li>
-                            <li>AI-powered transaction group matching, advanced user management</li>
-                            <li>MCP solution for user chat requests</li>
                         </ul>
                     </mat-card-content>  
                     <mat-card-content>
@@ -47,7 +43,9 @@
                     </mat-card-content>
                     <mat-card-content>
                         <p>Azure Architecture</p>
-                        <img src="assets/diagram.png" alt="Azure Architecture Diagram" />
+                        <a href="assets/diagram.png" target="_blank">
+                            <img src="assets/diagram.png" alt="Azure Architecture Diagram" />
+                        </a>
                     </mat-card-content>
                     <mat-card-content>
                         <p>User creation with email confirmation</p>

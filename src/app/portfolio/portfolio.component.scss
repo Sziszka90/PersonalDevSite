@@ -109,9 +109,6 @@ h2 {
     line-height: 3rem;
 }
 
-// Responsive
-@media (max-width: 1400px) {
-    .portfolio-card {
-        max-width: 100%;
-    }
+.portfolio-card {
+    max-width: 100%;
 }
