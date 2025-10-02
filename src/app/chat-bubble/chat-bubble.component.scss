@@ -8,7 +8,7 @@
 }
 
 .chat-toggle {
-  background: variables.$background-color;
+  background: linear-gradient(135deg, variables.$primary-color 0%, variables.$green-color 100%);
   color: white;
   border: none;
   border-radius: 50%;
@@ -17,25 +17,104 @@
   font-size: 2rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: visible;
+  z-index: 1100;
+}
+
+.chat-toggle:focus { outline: 2px solid rgba(255,255,255,0.12); }
+
+.pulse {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 88px; /* large ring */
+  height: 88px;
+  border-radius: 50%;
+  z-index: 1099; /* sit behind the button so the emoji stays visible */
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255,107,129,0.16) 0%, rgba(255,107,129,0.06) 40%, rgba(255,107,129,0) 60%);
+  animation: pulse-ring 1.6s cubic-bezier(.22,.9,.35,1) infinite;
+  opacity: 0.95;
+}
+
+.pulse::after {
+  content: '';
+  position: absolute;
+  left: 62%;
+  top: 36%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ff6b81;
+  box-shadow: 0 0 10px rgba(255,107,129,0.5);
+}
+
+.chat-icon {
+  display: inline-block;
+  line-height: 1;
+  transition: transform 220ms cubic-bezier(.22,.9,.35,1), text-shadow 220ms;
+}
+
+.chat-icon.pulsing {
+  animation: iconPulse 1.2s infinite cubic-bezier(.22,.9,.35,1);
+  text-shadow: 0 6px 18px rgba(255,107,129,0.25);
+}
+
+@keyframes iconPulse {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.18); }
+  70% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 1;
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(1.45);
+    opacity: 0.45;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+  }
 }
 
 .chat-window {
-  background: white;
+  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 30px rgba(0,0,0,0.25);
   width: 320px;
   padding: 16px;
   position: absolute;
-  bottom: 72px;
+  top: 72px;
   right: 0;
   display: flex;
   flex-direction: column;
   height: 400px;
+  transform-origin: top right;
+  animation: popIn 180ms ease-out;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.96); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 .chat-header {
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .chat-body {
@@ -95,7 +174,7 @@ textarea {
 }
 
 .chat-message.user {
-  background: #b3aaf0;
+  background: linear-gradient(90deg, #cbb7ff 0%, #b59af7 100%);
   color: #222;
   margin-left: auto;
   text-align: right;

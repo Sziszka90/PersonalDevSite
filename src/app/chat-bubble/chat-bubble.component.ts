@@ -27,18 +27,30 @@ export class ChatBubbleComponent {
   dragOffsetX = 0;
   dragOffsetY = 0;
   dragging = false;
-  bubblePosition = { bottom: 32, right: 32 };
+  bubblePosition = { top: 100, right: 32 };
   touchStartTime = 0;
   touchStartX = 0;
   touchStartY = 0;
   touchMoved = false;
 
+  private _handleDocumentClick!: (e: MouseEvent) => void;
+  private _mouseMoveHandler!: (e: MouseEvent) => void;
+  private _mouseUpHandler!: (e: MouseEvent) => void;
+  private _touchMoveHandler!: (e: TouchEvent) => void;
+  private _touchEndHandler!: (e: TouchEvent) => void;
+
   constructor() {
-    document.addEventListener('click', this.handleDocumentClick.bind(this));
+    this._handleDocumentClick = this.handleDocumentClick.bind(this);
+    this._mouseMoveHandler = this.onDragMove.bind(this) as unknown as (e: MouseEvent) => void;
+    this._mouseUpHandler = this.onDragEnd.bind(this) as unknown as (e: MouseEvent) => void;
+    this._touchMoveHandler = this.onDragMove.bind(this) as unknown as (e: TouchEvent) => void;
+    this._touchEndHandler = this.onDragEnd.bind(this) as unknown as (e: TouchEvent) => void;
+
+    document.addEventListener('click', this._handleDocumentClick);
   }
 
   ngOnDestroy() {
-    document.removeEventListener('click', this.handleDocumentClick.bind(this));
+    document.removeEventListener('click', this._handleDocumentClick);
   }
 
   handleDocumentClick(event: MouseEvent) {
@@ -87,13 +99,13 @@ export class ChatBubbleComponent {
       event.preventDefault();
       this.dragOffsetX = event.touches[0].clientX;
       this.dragOffsetY = event.touches[0].clientY;
-      document.addEventListener('touchmove', this.onDragMove.bind(this), { passive: false });
-      document.addEventListener('touchend', this.onDragEnd.bind(this));
+      document.addEventListener('touchmove', this._touchMoveHandler, { passive: false });
+      document.addEventListener('touchend', this._touchEndHandler);
     } else {
       this.dragOffsetX = event.clientX;
       this.dragOffsetY = event.clientY;
-      document.addEventListener('mousemove', this.onDragMove.bind(this));
-      document.addEventListener('mouseup', this.onDragEnd.bind(this));
+      document.addEventListener('mousemove', this._mouseMoveHandler);
+      document.addEventListener('mouseup', this._mouseUpHandler);
     }
   }
 
@@ -113,16 +125,24 @@ export class ChatBubbleComponent {
     const dx = clientX - this.dragOffsetX;
     const dy = clientY - this.dragOffsetY;
     if (this.chatBubble) {
-      const bubbleRect = this.chatBubble.nativeElement.getBoundingClientRect();
+      // prefer using the toggle button size for clamping so the visible clickable area
+      // never disappears even if the chat window opens
+      const toggleEl: HTMLElement | null = this.chatBubble.nativeElement.querySelector('.chat-toggle');
+      const refRect = toggleEl ? toggleEl.getBoundingClientRect() : this.chatBubble.nativeElement.getBoundingClientRect();
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
+
       let newRight = this.bubblePosition.right - dx;
-      let newBottom = this.bubblePosition.bottom - dy;
-      // Prevent moving out of viewport
-      newRight = Math.max(0, Math.min(newRight, viewportWidth - bubbleRect.width));
-      newBottom = Math.max(0, Math.min(newBottom, viewportHeight - bubbleRect.height));
+      let newTop = this.bubblePosition.top + dy;
+
+      const maxRight = Math.max(0, viewportWidth - refRect.width);
+      const maxTop = Math.max(0, viewportHeight - refRect.height);
+
+      newRight = Math.max(0, Math.min(newRight, maxRight));
+      newTop = Math.max(0, Math.min(newTop, maxTop));
+
       this.bubblePosition.right = newRight;
-      this.bubblePosition.bottom = newBottom;
+      this.bubblePosition.top = newTop;
     }
     this.dragOffsetX = clientX;
     this.dragOffsetY = clientY;
@@ -130,10 +150,10 @@ export class ChatBubbleComponent {
 
   onDragEnd() {
     this.dragging = false;
-    document.removeEventListener('mousemove', this.onDragMove.bind(this));
-    document.removeEventListener('mouseup', this.onDragEnd.bind(this));
-    document.removeEventListener('touchmove', this.onDragMove.bind(this));
-    document.removeEventListener('touchend', this.onDragEnd.bind(this));
+    document.removeEventListener('mousemove', this._mouseMoveHandler);
+    document.removeEventListener('mouseup', this._mouseUpHandler);
+    document.removeEventListener('touchmove', this._touchMoveHandler);
+    document.removeEventListener('touchend', this._touchEndHandler);
   }
 
   onTouchStart(event: TouchEvent) {
@@ -150,6 +170,7 @@ export class ChatBubbleComponent {
     if (Math.abs(dx) > 10 || Math.abs(dy) > 10) {
       this.touchMoved = true;
     }
+    // update drag offsets for touch move
     this.onDragMove(event);
   }
 
