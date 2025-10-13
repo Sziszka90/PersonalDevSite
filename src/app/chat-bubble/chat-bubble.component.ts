@@ -125,8 +125,6 @@ export class ChatBubbleComponent {
     const dx = clientX - this.dragOffsetX;
     const dy = clientY - this.dragOffsetY;
     if (this.chatBubble) {
-      // prefer using the toggle button size for clamping so the visible clickable area
-      // never disappears even if the chat window opens
       const toggleEl: HTMLElement | null = this.chatBubble.nativeElement.querySelector('.chat-toggle');
       const refRect = toggleEl ? toggleEl.getBoundingClientRect() : this.chatBubble.nativeElement.getBoundingClientRect();
       const viewportWidth = window.innerWidth;
@@ -170,7 +168,6 @@ export class ChatBubbleComponent {
     if (Math.abs(dx) > 10 || Math.abs(dy) > 10) {
       this.touchMoved = true;
     }
-    // update drag offsets for touch move
     this.onDragMove(event);
   }
 
