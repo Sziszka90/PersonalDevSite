@@ -82,11 +82,19 @@ li {
 }
 
 .custom-button:disabled {
-  background-color: #ccc;
-  color: #666;
+  background-color: variables.$primary-color;
+  color: white;
+  border: 3px solid variables.$primary-color;
   cursor: not-allowed;
-  opacity: 0.6;
-  border: 1px solid #aaa;
+  opacity: 1;
+  pointer-events: none;
+  filter: none;
+}
+
+/* Prevent hover animation when disabled */
+.bounce-button:disabled,
+.bounce-button:disabled:hover {
+  animation: none;
 }
 
 .disable-button {
