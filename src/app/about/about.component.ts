@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { TypingAnimationDirective } from '../../directives/typewriter/typing-animation.directive';
 import { FloatInOnScrollDirective } from '../directives/float-in.directive';
+import { TelemetryService } from '../telemetry.service';
 
 import { interval } from 'rxjs';
 
@@ -12,6 +13,8 @@ import { interval } from 'rxjs';
   styleUrl: './about.component.scss',
 })
 export class AboutComponent implements OnInit {
+  private readonly telemetry = inject(TelemetryService);
+
   start: boolean = false;
 
   // Controls disabled state of the CV download button
@@ -19,6 +22,14 @@ export class AboutComponent implements OnInit {
 
   ngOnInit() {
     interval(5000).subscribe(() => this.start = !this.start);
+  }
+
+  trackCvDownload(): void {
+    this.telemetry.trackEvent('cv_download');
+  }
+
+  trackLinkedInClick(): void {
+    this.telemetry.trackEvent('linkedin_click');
   }
 
   downloadCv() {
