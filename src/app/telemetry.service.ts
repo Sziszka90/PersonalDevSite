@@ -50,6 +50,7 @@ export class TelemetryService {
           disableCookiesUsage: true,
           enableAutoRouteTracking: false,
           enableCorsCorrelation: true,
+          correlationHeaderExcludedDomains: ['api.rss2json.com'],
           samplingPercentage: 100
         }
       });
